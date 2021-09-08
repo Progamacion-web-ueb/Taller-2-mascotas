@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="./css/styles.css" />
-		<script src="./js/main.js"></script>
 		<title>Taller numero 2 mascotas</title>
 	</head>
 
@@ -83,24 +82,30 @@
 
 					<div ">
 						<input type="submit" value="Guardar">
+						<input type="button" value="Insertar en la tabla" onclick="genera_tabla()">
+						<input type="button" value="Insertar en la tabl1a" onclick="addrow()">
 					</div>
 				</form>
 			</section>
 
 			<section id="table1">
-				<table id="table" class="table" border="1">
-					<tr >
-						<th> Nombre del propietario </th>
-						<th> Nombre de la mascota </th>
-						<th> Microchip </th>
-						<th> Especie </th>
-						<th> Sexo </th>
-						<th> Tamaño </th>
-						<th> Esterilizacion </th>
-						<th> Peligrosidad </th>
-						<th> Localidad </th>
-					</tr>
-					<tr class ="informationPet">
+				<table id="table" border="1">
+					<thead>
+						<tr >
+							<th> Nombre del propietario </th>
+							<th> Nombre de la mascota </th>
+							<th> Microchip </th>
+							<th> Especie </th>
+							<th> Sexo </th>
+							<th> Tamaño </th>
+							<th> Esterilizacion </th>
+							<th> Peligrosidad </th>
+							<th> Localidad </th>
+						</tr>
+					</thead>
+					
+					<tbody id="informationPet">
+					<tr >	
 						<td>dot1</td>
 						<td>dot2</td>
 						<td>dot3</td>
@@ -111,6 +116,9 @@
 						<td>dot8</td>
 						<td>dot9</td>
 					</tr>
+					</tbody>
+					
+					
 				</table>
 			</section>
 
@@ -132,7 +140,8 @@
 			<footer>
 				<hr>
 			</footer>
-
+			<!-- Scripts -->
+			<script src="./js/main.js"></script>
 	</body>	
 
 </html>
