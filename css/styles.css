@@ -1,0 +1,17 @@
+/*
+ * Table styles 
+*/
+table{
+    width:900px;
+    font:normal 13px Arial;
+    text-align:center;
+    border-collapse:collapse;
+}
+table th{
+     font:bold 18px Arial;
+    background-color:lightblue;
+}
+.informationPet{
+    color:yellow;
+    background-color:red;
+}

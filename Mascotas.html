@@ -1,14 +1,117 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="./css/styles.css" />
 		<title>Taller numero 2 mascotas</title>
-		<h1>Mascotas</h1>
 	</head>
+
 	<body>
-			<p>Prueba</p>
+		<header>
+			<a href="/">
+				<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCg9xeWxOVst15ZZEIRXgOmeQDDXVosL_X-w&usqp=CAU>
+			</a>
+			<h1 align="center">Ciudadanos de cuatro patas</h1>
+		</header>
+		<article>
+			<section id="form">
+				<h2>Creacion de mascotas</h2>
+				<form >
+  					<div >
+					    <label for="ownerName">Nombre del propietario: </label>
+					    <input type="text" name="ownerName" id="ownerName" required>
+ 					</div>
+ 					<div >
+					    <label for="petName">Nombre de la mascota: </label>
+					    <input type="text" name="petName" id="petName" required>
+ 					</div>
+ 					<div >
+					    <label for="microchip">Microchip: </label>
+					    <input type="text" name="microchip" id="microchip" required>
+ 					</div>
+ 					<div >
+					    <label for="species">Especie: </label>
+					    <select  name="species" id="species" required>
+					    	<option></option>
+							<option>Canino</option>
+							<option>Felino</option>
+						</select>
+ 					</div>
+ 					<div >
+					    <label for="sex">Sexo: </label>
+					    <select name="sex" id="sex" required>
+					    	<option></option>
+							<option>Macho</option>
+							<option>Hembra</option>
+						</select>
+ 					</div>
+ 					<div >
+					    <label for="size">Tamaño: </label>
+					    <select  name="size" id="size" required>
+					    	<option></option>
+							<option>Pequeño</option>
+							<option>Mediano</option>
+							<option>Grande</option>
+						</select>
+ 					</div>
+ 					<div >
+					    <label for="sterilization">Esterilizacion: </label>
+					    <select  name="sterilization" id="sterilization" required>
+					    	<option></option>
+							<option>SI</option>
+							<option>NO</option>
+						</select>
+ 					</div>
+ 					<div >
+					    <label for="neighborhood">Localidad: </label>
+					    <select  name="neighborhood" id="neighborhood" required>
+					    	<option></option>
+							<option>Usaquen</option>
+							<option>otro ...etc</option>
+						</select>
+ 					</div>
+
+					<div ">
+					    <input type="submit" value="Guardar">
+					</div>
+				</form>
+			</section>
+
+			<section id="table1">
+				<table class="table" border="1">
+					<tr >
+						<th> Nombre del propietario </th>
+						<th> Nombre de la mascota </th>
+						<th> Microchip </th>
+						<th> Especie </th>
+						<th> Sexo </th>
+						<th> Tamaño </th>
+						<th> Esterilizacion </th>
+						<th> Localidad </th>
+					</tr>
+					<tr class ="informationPet">
+						<td>dot1</td>
+						<td>dot2</td>
+						<td>dot3</td>
+						<td>dot4</td>
+						<td>dot5</td>
+						<td>dot6</td>
+						<td>dot7</td>
+						<td>dot8</td>
+					</tr>
+				</table>
+			</section>
+
+			<section id="modifyForm">
+				
+			</section>
+		</article>
+			
 
 			<footer>
-				<p align="center">Pie de pagina </p>
+				<hr>
 			</footer>
 
 	</body>	
+
 </html>
