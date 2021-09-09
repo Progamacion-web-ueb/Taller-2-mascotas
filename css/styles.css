@@ -1,17 +1,23 @@
 /*
  * Table styles 
 */
-table{
-    width:900px;
-    font:normal 13px Arial;
-    text-align:center;
-    border-collapse:collapse;
+table {
+    border: 1px solid;
+    table-layout: fixed;
+    width: 1200px;
+    font: normal 13px Arial;
+    text-align: center;
+    border-collapse: collapse;
+    border-color: black;
 }
 table th{
      font:bold 18px Arial;
     background-color:lightblue;
 }
 .informationPet{
-    color:yellow;
-    background-color:red;
+    color:black;
+    background-color:white;
+}
+th.column-header-i {
+    font-size: 30px;
 }
