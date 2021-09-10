@@ -1,5 +1,4 @@
 
-
 var rowId = 0;
 
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
@@ -58,4 +57,4 @@ document.getElementById("petsave-button").onclick = function () {
 		tr.appendChild(td);
 	});
 	document.getElementById("body-table").appendChild(tr);
-};
+
