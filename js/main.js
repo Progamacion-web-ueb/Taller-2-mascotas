@@ -57,4 +57,4 @@ document.getElementById("petsave-button").onclick = function () {
 		tr.appendChild(td);
 	});
 	document.getElementById("body-table").appendChild(tr);
-};
+
