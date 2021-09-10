@@ -8,9 +8,6 @@
 
 	<body>
 		<header>
-			<a href="/">
-				<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCg9xeWxOVst15ZZEIRXgOmeQDDXVosL_X-w&usqp=CAU>
-			</a>
 			<h1 align="center">Ciudadanos de cuatro patas</h1>
 		</header>
 		<article>
@@ -19,19 +16,19 @@
 				<form>
 					<div>
 						<label for="ownerName">Nombre del propietario: </label>
-						<input type="text" name="ownerName" id="ownerName" required>
+						<input type="text" name="ownerName" id="ownerName-input" required>
 					</div>
 					<div>
 						<label for="petName">Nombre de la mascota: </label>
-						<input type="text" name="petName" id="petName" required>
+						<input type="text" name="petName" id="petName-input" required>
 					</div>
 					<div>
 						<label for="microchip">Microchip: </label>
-						<input type="text" name="microchip" id="microchip">
+						<input type="text" name="microchip" id="microchip-input">
 					</div>
 					<div>
 						<label for="species">Especie: </label>
-						<select name="species" id="species" required>
+						<select name="species" id="species-input" required>
 							<option></option>
 							<option>Canino</option>
 							<option>Felino</option>
@@ -39,7 +36,7 @@
 					</div>
 					<div>
 						<label for="sex">Sexo: </label>
-						<select name="sex" id="sex" required>
+						<select name="sex" id="sex-input" required>
 							<option></option>
 							<option>Macho</option>
 							<option>Hembra</option>
@@ -47,7 +44,7 @@
 					</div>
 					<div>
 						<label for="size">Tamaño: </label>
-						<select name="size" id="size" required>
+						<select name="size" id="size-input" required>
 							<option></option>
 							<option>Pequeño</option>
 							<option>Mediano</option>
@@ -56,7 +53,7 @@
 					</div>
 					<div>
 					<label for="dangerous">Peligrosidad: </label>
-					<select name="dangerous" id="dangerous" required>
+					<select name="dangerous" id="dangerous-input" required>
 						<option></option>
 						<option>No Amenaza</option>
 						<option>Amenaza</option>
@@ -64,8 +61,7 @@
 					</div>
 					<div>
 						<label for="sterilization">Esterilizacion: </label>
-
-						<select name="sterilization" id="sterilization" required>
+						<select name="sterilization" id="sterilization-input" required>
 							<option></option>
 							<option>SI</option>
 							<option>NO</option>
@@ -73,74 +69,69 @@
 					</div>
 					<div>
 						<label for="neighborhood">Localidad: </label>
-						<select name="neighborhood" id="neighborhood" required>
+						<select name="neighborhood" id="neighborhood-input" required>
 							<option></option>
-							<option>Usaquen</option>
-							<option>otro ...etc</option>
+							<option>Antonio Nariño</option>
+							<option>Barrios Unidos</option>
+							<option>Bosa</option>
+							<option>Chapinero</option>
+							<option>Ciudad Bolivar</option>
+							<option>Engativá</option>
+							<option>Fontibón</option>
+							<option>Kennedy</option>
+							<option>La Candelaría</option>
+							<option>Los Mártires</option>
+							<option>Puente Aranda</option>
+							<option>Rafael Uribe Uribe</option>
+							<option>San Cristóbal</option>
+							<option>Santa Fe</option>
+							<option>Suba</option>
+							<option>Sumapaz</option>
+							<option>Teusaquillo</option>
+							<option>Tunjuelito</option>
+							<option>Usaquén</option>
+							<option>Usme</option>
 						</select>
 					</div>
 
 					<div ">
-						<input type="submit" value="Guardar">
-						<input type="button" value="Insertar en la tabla" onclick="genera_tabla()">
-						<input type="button" value="Insertar en la tabl1a" onclick="addrow()">
+						<input id="petsave-button" type="submit" value="Guardar" class="boton"/>
 					</div>
 				</form>
 			</section>
 
-			<section id="table1">
-				<table id="table" border="1">
-					<thead>
-						<tr >
-							<th> Nombre del propietario </th>
-							<th> Nombre de la mascota </th>
-							<th> Microchip </th>
-							<th> Especie </th>
-							<th> Sexo </th>
-							<th> Tamaño </th>
-							<th> Esterilizacion </th>
-							<th> Peligrosidad </th>
-							<th> Localidad </th>
-						</tr>
-					</thead>
-					
-					<tbody id="informationPet">
-					<tr >	
-						<td>dot1</td>
-						<td>dot2</td>
-						<td>dot3</td>
-						<td>dot4</td>
-						<td>dot5</td>
-						<td>dot6</td>
-						<td>dot7</td>
-						<td>dot8</td>
-						<td>dot9</td>
-					</tr>
-					</tbody>
-					
-					
-				</table>
-			</section>
+			<table>
+				<thead>
+				<th class="column-header">Nombre del propietario</th>
+				<th class="column-header">Nombre del dueño</th>
+				<th class="column-header column-header-microchip">Microchip</th>
+				<th class="column-header column-header-species">Especie</th>
+				<th class="column-header column-header-sex">Sexo</th>
+				<th class="column-header column-header-size">Tamaño</th>
+				<th class="column-header column-header-sterilization">Esterilización</th>
+				<th class="column-header column-header-dangerous">Peligrosidad</th>
+				<th class="column-header column-header-neighborhood">Localidad</th>
+				</thead>
+				<tbody id="body-table">
+				</tbody>
+			</table>
+					<section id="modifyForm">
+						<h2>Formulario modificacion</h2>
+						<h5>Ingrese Los siguientes campos para realizar una modificacion</h5>
 
-			<section id="modifyForm">
-				<h2>Formulario modificacion</h2>
-				<h5>Ingrese Los siguientes campos para realizar una modificacion</h5>
+						<form>
+							<div>
+								<label for="madificationDa">Nombre del propietario: </label>
+								<input type="date" name="madificationDa" id="madificationDa" required>
+							</div>
+						</form>
 
-				<form >
-  					<div >
-					    <label for="madificationDa">Nombre del propietario: </label>
-					    <input type="date" name="madificationDa" id="madificationDa" required>
- 					</div>
- 				</form>
-
-			</section>
-		</article>
+					</section>
+</article>
 			
-
 			<footer>
 				<hr>
 			</footer>
-			<!-- Scripts -->
 			<script src="./js/main.js"></script>
 	</body>	
 
