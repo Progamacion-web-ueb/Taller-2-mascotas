@@ -1,5 +1,31 @@
 
+var rowId = 0;
+
+var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+const dbName = "petDB";
+
+var request = indexedDB.open(dbName, 2);
+
+request.onerror = function (event) {
+	console.log("Database error");
+};
+request.onupgradeneeded = function (event) {
+	var db = event.target.result;
+	var objectStore = db.createObjectStore("pets", { keyPath: "ownername" });
+	objectStore.createIndex("petNameInput", "petNameInput", { unique: false });
+};
+var request = indexedDB.open(dbName, 2);
+request.onsuccess = function (event) {
+	var db = event.target.result;
+	var tx = db.transaction("pets");
+	var objectStore = tx.objectStore("pets");
+	objectStore.getAll().onsuccess = function (event) {
+		console.log(event.target.result);
+		rowId = event.target.result.length;
+	};
+};
 document.getElementById("petsave-button").onclick = function () {
+	rowId += 1;
 	let pet = {
 		ownerInput: document.getElementById("ownerName-input").value,
 		petNameInput: document.getElementById("petName-input").value,
@@ -11,6 +37,15 @@ document.getElementById("petsave-button").onclick = function () {
 		dangerousInput: document.getElementById("dangerous-input").value,
 		neighborhoodInput: document.getElementById("neighborhood-input").value,
 	}
+
+	var request = indexedDB.open(dbName, 2);
+	request.onsuccess = function (event) {
+		var db = event.target.result;
+		var customerObjectStore = db.transaction("pets", "readwrite").objectStore("pets");
+		pet["ownername"] = rowId;
+		customerObjectStore.add(pet);
+	};
+
 	let tr = document.createElement("tr");
 
 	Object.keys(pet).forEach((key) => {
@@ -21,6 +56,5 @@ document.getElementById("petsave-button").onclick = function () {
 
 		tr.appendChild(td);
 	});
-
 	document.getElementById("body-table").appendChild(tr);
 };
