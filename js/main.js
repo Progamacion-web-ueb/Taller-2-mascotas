@@ -44,17 +44,31 @@ document.getElementById("petsave-button").onclick = function () {
 		var customerObjectStore = db.transaction("pets", "readwrite").objectStore("pets");
 		pet["ownername"] = rowId;
 		customerObjectStore.add(pet);
+		customerObjectStore.addEventListener("sucess", mostrar, false);
 	};
-
-	let tr = document.createElement("tr");
-
-	Object.keys(pet).forEach((key) => {
-		console.log(key);
-
-		let td = document.createElement("td");
-		td.innerHTML = pet[key];
-
-		tr.appendChild(td);
-	});
-	document.getElementById("body-table").appendChild(tr);
 };
+
+function mostrar() {
+
+	var transaccion = db.transaction("pets", "readonly");
+	var almacen = transaccion.objectStore("pets");
+	var cursor = almacen.OpenCursor();
+	cursor.addEventListener("Success", mostrarDatos, false);
+}
+
+function mostrarDatos(e) {
+	var cursor = e.target.result;
+	if (cursor) {
+		let tr = document.createElement("tr");
+
+		Object.keys(pet).forEach((key) => {
+			console.log(key);
+
+			let td = document.createElement("td");
+			td.innerHTML = cursor.value.pet;
+
+			tr.appendChild(td);
+		});
+		document.getElementById("body-table").appendChild(tr);
+    }
+}
