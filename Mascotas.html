@@ -1,139 +1,72 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="./css/styles.css" />
-		<title>Taller numero 2 mascotas</title>
-	</head>
+﻿<!DOCTYPE html>
+<html lang="en">
 
-	<body>
-		<header>
-			<h1 align="center">Ciudadanos de cuatro patas</h1>
-		</header>
-		<article>
-			<section id="form">
-				<h2>Creacion de mascotas</h2>
-				<form>
-					<div>
-						<label for="ownerName">Nombre del propietario: </label>
-						<input type="text" name="ownerName" id="ownerName-input" required>
-					</div>
-					<div>
-						<label for="petName">Nombre de la mascota: </label>
-						<input type="text" name="petName" id="petName-input" required>
-					</div>
-					<div>
-						<label for="microchip">Microchip: </label>
-						<input type="text" name="microchip" id="microchip-input">
-					</div>
-					<div>
-						<label for="species">Especie: </label>
-						<select name="species" id="species-input" required>
-							<option></option>
-							<option>Canino</option>
-							<option>Felino</option>
-						</select>
-					</div>
-					<div>
-						<label for="sex">Sexo: </label>
-						<select name="sex" id="sex-input" required>
-							<option></option>
-							<option>Macho</option>
-							<option>Hembra</option>
-						</select>
-					</div>
-					<div>
-						<label for="size">Tamaño: </label>
-						<select name="size" id="size-input" required>
-							<option></option>
-							<option>Pequeño</option>
-							<option>Mediano</option>
-							<option>Grande</option>
-						</select>
-					</div>
-					<div>
-					<label for="dangerous">Peligrosidad: </label>
-					<select name="dangerous" id="dangerous-input" required>
-						<option></option>
-						<option>No Amenaza</option>
-						<option>Amenaza</option>
-					</select>
-					</div>
-					<div>
-						<label for="sterilization">Esterilizacion: </label>
-						<select name="sterilization" id="sterilization-input" required>
-							<option></option>
-							<option>SI</option>
-							<option>NO</option>
-						</select>
-					</div>
-					<div>
-						<label for="neighborhood">Localidad: </label>
-						<select name="neighborhood" id="neighborhood-input" required>
-							<option></option>
-							<option>Antonio Nariño</option>
-							<option>Barrios Unidos</option>
-							<option>Bosa</option>
-							<option>Chapinero</option>
-							<option>Ciudad Bolivar</option>
-							<option>Engativá</option>
-							<option>Fontibón</option>
-							<option>Kennedy</option>
-							<option>La Candelaría</option>
-							<option>Los Mártires</option>
-							<option>Puente Aranda</option>
-							<option>Rafael Uribe Uribe</option>
-							<option>San Cristóbal</option>
-							<option>Santa Fe</option>
-							<option>Suba</option>
-							<option>Sumapaz</option>
-							<option>Teusaquillo</option>
-							<option>Tunjuelito</option>
-							<option>Usaquén</option>
-							<option>Usme</option>
-						</select>
-					</div>
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport " content="width=device-width, initial-scale=1.0">
+    <title>Ciudadanos de 4 Patas</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
-					<div ">
-						<input id="petsave-button" type="submit" value="Guardar" class="boton"/>
-					</div>
-				</form>
-			</section>
+</head>
 
-			<table>
-				<thead>
-				<th class="column-header">Nombre del propietario</th>
-				<th class="column-header">Nombre del dueño</th>
-				<th class="column-header column-header-microchip">Microchip</th>
-				<th class="column-header column-header-species">Especie</th>
-				<th class="column-header column-header-sex">Sexo</th>
-				<th class="column-header column-header-size">Tamaño</th>
-				<th class="column-header column-header-sterilization">Esterilización</th>
-				<th class="column-header column-header-dangerous">Peligrosidad</th>
-				<th class="column-header column-header-neighborhood">Localidad</th>
-				</thead>
-				<tbody id="body-table">
-				</tbody>
-			</table>
-					<section id="modifyForm">
-						<h2>Formulario modificacion</h2>
-						<h5>Ingrese Los siguientes campos para realizar una modificacion</h5>
+<body>
+    <header>
+        <section class="textos-header">
+            <h1> CIUDADANOS DE 4 PATAS </h1>
+            <h2>
+            Bienvenidos al sistema de registro, busqueda y seguridad
+            para tus compañeros peludos
+            </h2>
+        </section>
+    </header>
 
-						<form>
-							<div>
-								<label for="madificationDa">Nombre del propietario: </label>
-								<input type="date" name="madificationDa" id="madificationDa" required>
-							</div>
-						</form>
+    <main>
+        <div class="section contenedor sobre-nosotros">
+            <h2 class="titulo">¿A que nos dedicamos?</h2>
+            <div class="contenedor sobre-Nosotros">
+                <img src="img/Imagen1.jpg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span> Cuida a tu compañero</h3>
+                    <p>
+                        Las autoridades de Salud estiman que en la ciudad hay 903.573 perros de los cuales unos 90.000
+                        son callejeros.
+                        Lo delicado del asunto es que no solo los considerados perros callejeros vagan por las calles,
+                        también aquellos que tienen propietario reconocido, pero que no cuida de su mascota.
+                        En un cálculo realizado con metodologías de la Organización Panamericana de la Salud el Distrito
+                        calculó que de cada 100 perros que tienen vivienda en Bogotá, 38 deambulan por la calle.
+                        La situación se presenta porque los dueños sacan a sus perros de la casa para que busquen
+                        la comida en la calle o los dejan vagar durante el día y solo los cobijan en sus viviendas
+                        en la noche.
+                        Hoy, el dato estimado es de los 90 mil ejemplares que vagan por las calles, las localidades
+                        donde más se han identificado son Kennedy con 16.000, Usme con 15.000, Suba con 12.000, Engativá
+                        con 10.000 y Ciudad Bolívar con 7.000.
 
-					</section>
-</article>
-			
-			<footer>
-				<hr>
-			</footer>
-			<script src="./js/main.js"></script>
-	</body>	
+                    </p>
+                    <h3><span>2</span> Registra tu compañero!!</h3>
+                    <p>
+                        La identificación y registro de los perros y gatos es una de las estrategias principales para
+                        luchar contra el abandono e incrementar las devoluciones de aquellos animales que se han perdido,
+                        porque una parte de las mascotas que llegan a los refugios no corresponde a un abandono, sino a
+                        una pérdida
+                    </p>
+                    <h3><span>3</span> Nuestros Servicios </h3>
+                    <ul>
+                        <button><a href="ListaAnimales.html">Cargar Listado De Mascotas</a></button>
+                        <button><a href="ActualizarMascota.html">Actualizar Mascota</a></button>
+                    </ul>
+                </div>
+            </div>          
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1   0/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="js/csv.js" type="text/javascript"></script>
+    <!--importando js al html-->
+</body>
 
 </html>
-
