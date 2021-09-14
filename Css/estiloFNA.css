@@ -4,9 +4,7 @@
 
 header {
     background: rgb(190, 115, 1);
-    color: darkgray;
-    padding: 2rem 0;
-    width: 100%;
+    color: black;
     position: fixed;
     left: 0;
     top: 0;
@@ -105,7 +103,7 @@ p {
     margin-bottom: 16px;
 }
 
-.fomr-register .Boton {
+.fomr-register.Boton {
     width: 100%;
     background: cornflowerblue;
     padding: 12px;

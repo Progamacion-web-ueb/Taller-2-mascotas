@@ -101,3 +101,32 @@ header .textos-header {
    height: 30px;
    box-shadow: 0 0 6px 0 blackrgba(0,0,0,.5);
 	}
+.btn-personalizado {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 15px;
+	color: #333333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #FFD27D;
+	border-color: #d8d8d8;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 35px;
+}
+.btn-personalizado2 {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 15px;
+	color: #333333;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #FFD27D;
+	border-color: wheat;
+	border-width: 3px;
+	border-style: solid;
+}
