@@ -130,31 +130,62 @@
 				
 				var filterSize=document.querySelector("#sizeOption").value;
 				var filterDangerous=document.querySelector("#dangerousOption").value;
-				console.log(filterneighborhood);
-				console.log(filterSize);
-				console.log(filterDangerous);
+				var filterspices=document.querySelector("#speciesOption").value;
+				var filterSex=document.querySelector("#sexOption").value;
+				var filterMicrochip=document.querySelector("#microchipOption").value;
+				var filterSterile=document.querySelector("#sterileOption").value;
+				
+				if(filterMicrochip=="Mascotas que NO tienen microchip"){
+					filterMicrochip="";
+				}
 
-				if(filterneighborhood ==current.neighborhood){
-					console.log("filtro localidad on");
-					if(filterSize==current.size){
-						console.log("filtro size on");
-						if(filterDangerous==current.dangerous){
-							console.log("filtro size on");
+				if(filterSize==current.size||filterSize=="seleccione"){
+					console.log("filter1")
+					if(filterDangerous==current.dangerous||filterDangerous=="seleccione"){
+						console.log("filter2")
+						if(filterspices==current.species||filterspices=="seleccione"){
+							console.log("filter3")
+							if(filterSex==current.sex||filterSex=="seleccione"){
+								console.log("filter4")
+								if(filterSterile==current.sterile||filterSterile=="seleccione"){
+									console.log("filter5")
+									if(filterMicrochip==""||filterMicrochip=="seleccione"){
+										console.log("filter6")
+										td1.innerHTML= current.ownerName;
+										td2.innerHTML= current.petName;
+										td3.innerHTML= current.microchip;
+										td4.innerHTML= current.species;
+										td5.innerHTML= current.sex;
+										td6.innerHTML= current.size;
+										td7.innerHTML= current.sterile;
+										td8.innerHTML= current.dangerous;
+										td9.innerHTML= current.neighborhood;
+										td10.innerHTML= current.creationDate;
+										td11.innerHTML= key;
+									}else if(filterMicrochip!=""||filterMicrochip=="seleccione"){
+										console.log("filter7")
+										td1.innerHTML= current.ownerName;
+										td2.innerHTML= current.petName;
+										td3.innerHTML= current.microchip;
+										td4.innerHTML= current.species;
+										td5.innerHTML= current.sex;
+										td6.innerHTML= current.size;
+										td7.innerHTML= current.sterile;
+										td8.innerHTML= current.dangerous;
+										td9.innerHTML= current.neighborhood;
+										td10.innerHTML= current.creationDate;
+										td11.innerHTML= key;
+									}
+								}
+								
+							}
 						}
 					}
 				}
 
-				td1.innerHTML= current.ownerName;
-				td2.innerHTML= current.petName;
-				td3.innerHTML= current.microchip;
-				td4.innerHTML= current.species;
-				td5.innerHTML= current.sex;
-				td6.innerHTML= current.size;
-				td7.innerHTML= current.sterile;
-				td8.innerHTML= current.dangerous;
-				td9.innerHTML= current.neighborhood;
-				td10.innerHTML= current.creationDate;
-				td11.innerHTML= key;
+				
+
+				
 
 				// Pasamos a procesar el siguiente resultado
 				cursor.continue();
