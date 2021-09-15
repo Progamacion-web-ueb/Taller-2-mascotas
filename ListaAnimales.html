@@ -18,95 +18,61 @@
     <tr>
     </tr>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addingNewAnimal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="btn-addPet">Añadir Mascota</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="form12">
-                        <label for="">Nombre Del Propietario : </label>
-                        <input type="text" id="ownerName" class="form-control" required>
-                        <label for="">Nombre De La Mascota : </label>
-                        <input type="text" id="petName" class="form-control" required>
-                        <label for="">Microchip : </label>
-                        <input type="text" id="Microchip" class="form-control">
-                        <label for="">Especie: </label>
-                        <select type="text" id="especie" class="form-control" required>
-                            <option></option>
-                            <option>Canino</option>
-                            <option>Felino</option>
-                        </select>
-                        <label for="">Sexo : </label>
-                        <select type="text" id="sexo" class="form-control" required>
-                            <option></option>
-                            <option>Macho</option>
-                            <option>Hembra</option>
-                        </select>
-                        <label for="">Tamaño : </label>
-                        <select type="text" id="tamaño" class="form-control" required>
-                            <option></option>
-                            <option>Pequeño</option>
-                            <option>Mediano</option>
-                            <option>Grande</option>
-                        </select>
-                        <label for="">Peligrosidad : </label>
-                        <select type="text" id="peligrosidad" class="form-control" required>
-                            <option></option>
-                            <option>No Amenaza</option>
-                            <option>Amenaza</option>
-                        </select>
-                        <label for="">Esterilización : </label>
-                        <select type="text" id="esterilizacion" class="form-control" required>
-                            <option></option>
-                            <option>SI</option>
-                            <option>NO</option>
-                        </select>
-                        <label for="">Localidad : </label>
-                        <select type="text" id="Localidad" class="form-control" required>
-                            <option></option>
-                            <option>Antonio Nariño</option>
-                            <option>Barrios Unidos</option>
-                            <option>Bosa</option>
-                            <option>Chapinero</option>
-                            <option>Ciudad Bolivar</option>
-                            <option>Engativá</option>
-                            <option>Fontibón</option>
-                            <option>Kennedy</option>
-                            <option>La Candelaría</option>
-                            <option>Los Mártires</option>
-                            <option>Puente Aranda</option>
-                            <option>Rafael Uribe Uribe</option>
-                            <option>San Cristóbal</option>
-                            <option>Santa Fe</option>
-                            <option>Suba</option>
-                            <option>Sumapaz</option>
-                            <option>Teusaquillo</option>
-                            <option>Tunjuelito</option>
-                            <option>Usaquén</option>
-                            <option>Usme</option>
-                        </select>
-
-                        <button class="col-md-6" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button class="col-md-6" type="submit" id="addAnimal" class="btn btn-primary">Añadir animal</button>
-</div>
-                </form>
-            </div>
-        </div>
-    </div>
     <ul>
-        <button class="btn-personalizado2" ><a href="Mascotas2.html">Pagina Inicio</a></button>
-        <button class="btn-personalizado2" ><a href="AgregarMascota.html"> Crear Mascota </a></button>
-        <button id="addDataTable" class="btn-personalizado2" data-bs-toggle="modal" data-bs-target="#addingNewAnimal">Cargar Datos</button>
+        <button class="btn-personalizado2"><a href="Mascotas2.html">Pagina Inicio</a></button>
+        <button class="btn-personalizado2"><a href="AgregarMascota.html"> Crear Mascota </a></button>
+        <button class="btn-personalizado2"><a href="ActualizarMascota.html"> Actualizar Mascota </a></button>
+        <button id="addDataTable" class="btn-personalizado2">Cargar Datos</button>
     </ul>
 
     <div class="container">
         <div class="table-responsive">
             <h1 id="btn-dataBase" align="center">Lista De Mascotas</h1>
+            <div>
+                <b>
+                    <label>Filtar por:</label>
+                </b>
+                <select type="text" id="especie">
+                    <option></option>
+                    <option>Canino</option>
+                    <option>Felino</option>
+                </select>
+                <button id="especie" class="btn-personalizado3"> Especie </button>
+                <select type="text" id="sexo">
+                    <option></option>
+                    <option>Macho</option>
+                    <option>Hembra</option>
+                </select>
+                <button id="sexo" class="btn-personalizado3"> Sexo </button>
+                <select type="text" id="tamaño">
+                    <option></option>
+                    <option>Pequeño</option>
+                    <option>Mediano</option>
+                    <option>Grande</option>
+                </select>
+                <button id="tamaño" class="btn-personalizado3"> Tamaño </button>
             </div>
+            <div>
+                <select type="text" id="peligrosidad">
+                    <option></option>
+                    <option>No Amenaza</option>
+                    <option>Amenaza</option>
+                </select>
+                <button id="peligrosidad" class="btn-personalizado3"> Peligrosidad </button>
+                <select type="text" id="microchipfilter">
+                    <option></option>
+                    <option>Existe</option>
+                    <option>No Existe</option>
+                </select>
+                <button id="microchip" class="btn-personalizado3"> Microchip </button>
+                <select type="text" id="esterilizacion">
+                    <option></option>
+                    <option>SI</option>
+                    <option>NO</option>
+                </select>
+                <button id="esterilizado" class="btn-personalizado3"> Esterilizacion </button>
+            </div>
+            <div><label></label> </div>
         </div>
     </div>
 <div>
