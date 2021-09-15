@@ -1,4 +1,5 @@
 
+	var key;
     console.log("create data base");
 	var openRequest = indexedDB.open("pets",1);
 	openRequest.onupgradeneeded = function(e) {
@@ -37,33 +38,38 @@
 			// cursor será truthy mientras haya elementos que procesar
 			if (cursor) {
 				// En cursor.value tenemos el elemento actual
+				var current = cursor.value;
 
 				let td1 = document.createElement("td");
-		let td2 = document.createElement("td");
-		let td3 = document.createElement("td");
-		let td4 = document.createElement("td");
-		let td5 = document.createElement("td");
-		let td6 = document.createElement("td");
-		let td7 = document.createElement("td");
-		let td8 = document.createElement("td");
-		let td9 = document.createElement("td");
-		let td10 = document.createElement("td");
-	
-		let tr = document.createElement("tr");
-		document.getElementById("body-table").appendChild(tr);
-	
-		tr.appendChild(td1)
-		tr.appendChild(td2)
-		tr.appendChild(td3)
-		tr.appendChild(td4)
-		tr.appendChild(td5)
-		tr.appendChild(td6)
-		tr.appendChild(td7)
-		tr.appendChild(td8)
-		tr.appendChild(td9)
-		tr.appendChild(td10)
+				let td2 = document.createElement("td");
+				let td3 = document.createElement("td");
+				let td4 = document.createElement("td");
+				let td5 = document.createElement("td");
+				let td6 = document.createElement("td");
+				let td7 = document.createElement("td");
+				let td8 = document.createElement("td");
+				let td9 = document.createElement("td");
+				let td10 = document.createElement("td");
+				let td11 = document.createElement("td");
+			
+				let tr = document.createElement("tr");
+				document.getElementById("body-table").appendChild(tr);
+				key=cursor.key;
 
-				var current = cursor.value;
+				
+			
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+				tr.appendChild(td5);
+				tr.appendChild(td6);
+				tr.appendChild(td7);
+				tr.appendChild(td8);
+				tr.appendChild(td9);
+				tr.appendChild(td10);
+				tr.appendChild(td11);
+						
 				console.log(current.name);
 				td1.innerHTML= current.ownerName;
 				td2.innerHTML= current.petName;
@@ -75,9 +81,18 @@
 				td8.innerHTML= current.dangerous;
 				td9.innerHTML= current.neighborhood;
 				td10.innerHTML= current.creationDate;
+				td11.innerHTML= key;
+
+				
 				// Pasamos a procesar el siguiente resultado
 				cursor.continue();
+			
 			}
 		} 
+		
+	}
+	
+	function alerta(){
+		alert("Submit button clicked!");
 	}
 
