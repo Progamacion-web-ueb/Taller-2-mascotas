@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Formulario de actualizacion de Registro</title>
+    <title >Formulario de actualizacion de Registro</title>
     <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <link rel="stylesheet" href="CSS/estilos.css">
     <link href="CSS/estiloFNA.css" rel="stylesheet">
@@ -15,45 +15,47 @@
     <header>
         <h1>Formulario de Creación de Mascota</h1>
         <form id="Formadd">
+            <label for="">Fecha : </label>
+            <input type="date" id="creationDate" placeholder="fecha"><br/>
             <label for="">Nombre Del Propietario : </label>
             <input type="text" id="ownerName" class="form-control" required>
             <label for="">Nombre De La Mascota : </label>
             <input type="text" id="petName" class="form-control" required>
             <label for="">Microchip : </label>
-            <input type="text" id="Microchip" class="form-control">
+            <input type="text" id="microchip" class="form-control">
             <label for="">Especie: </label>
-            <select type="text" id="especie" class="form-control" required>
+            <select type="text" id="species" class="form-control" required>
                 <option></option>
                 <option>Canino</option>
                 <option>Felino</option>
             </select>
             <label for="">Sexo : </label>
-            <select type="text" id="sexo" class="form-control" required>
+            <select type="text" id="sex" class="form-control" required>
                 <option></option>
                 <option>Macho</option>
                 <option>Hembra</option>
             </select>
             <label for="">Tamaño : </label>
-            <select type="text" id="tamaño" class="form-control" required>
+            <select type="text" id="size" class="form-control" required>
                 <option></option>
                 <option>Pequeño</option>
                 <option>Mediano</option>
                 <option>Grande</option>
             </select>
             <label for="">Peligrosidad : </label>
-            <select type="text" id="peligrosidad" class="form-control" required>
+            <select type="text" id="dangerous" class="form-control" required>
                 <option></option>
                 <option>No Amenaza</option>
                 <option>Amenaza</option>
             </select>
             <label for="">Esterilización : </label>
-            <select type="text" id="esterilizacion" class="form-control" required>
+            <select type="text" id="sterile" class="form-control" required>
                 <option></option>
                 <option>SI</option>
                 <option>NO</option>
             </select>
             <label for="">Localidad : </label>
-            <select type="text" id="Localidad" class="form-control" required>
+            <select type="text" id="neighborhood" class="form-control" required>
                 <option></option>
                 <option>Antonio Nariño</option>
                 <option>Barrios Unidos</option>
@@ -78,7 +80,7 @@
             </select>
             <h1></h1>
             <h1></h1>
-            <button class="btn-personalizado" type="submit" id="boton"> Crear Mascota </button>
+            <input id="addPet" type="button" value="Crear Mascota" onclick="return addPerson();" />
             <button class="btn-personalizado"><a href="Mascotas2.html">Pagina Inicio</a></button>
             <button class="btn-personalizado"><a href="ListaAnimales.html"> Listado de Mascotas </a></button>
             <label for=""> </label>
@@ -86,9 +88,7 @@
 
 </body>
 
-
-<script src="js/csv.js" type="text/javascript"></script>
-
+<script src="js/addPetDb.js"></script>
 
 
 </html>
