@@ -75,4 +75,5 @@ function addPerson() {
 	request.onsuccess = function(e) {
 		console.log("Woot! Did it");
 	}
+	return true;
 }
