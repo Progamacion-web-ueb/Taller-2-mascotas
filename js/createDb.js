@@ -127,7 +127,7 @@
 				tr.appendChild(td10);
 				tr.appendChild(td11);
 
-				var filterneighborhood=document.querySelector("#neighborhoodOption").value;
+				
 				var filterSize=document.querySelector("#sizeOption").value;
 				var filterDangerous=document.querySelector("#dangerousOption").value;
 				console.log(filterneighborhood);

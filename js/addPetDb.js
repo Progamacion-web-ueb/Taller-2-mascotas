@@ -23,7 +23,6 @@
         //Do something for the error
     }
 
-
     function addPerson() {
         var ownerName = document.querySelector("#ownerName").value;
         var creationDate = document.querySelector("#creationDate").value;
