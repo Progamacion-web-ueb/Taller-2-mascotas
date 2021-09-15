@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\img"
+    "\\Css",
+    "\\img",
+    "\\js"
   ],
-  "SelectedNode": "\\AgregarMascota.html",
+  "SelectedNode": "\\Css\\estilos.css",
   "PreviewInSolutionExplorer": false
 }
