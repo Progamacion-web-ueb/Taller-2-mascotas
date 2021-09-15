@@ -149,7 +149,7 @@
 								console.log("filter4")
 								if(filterSterile==current.sterile||filterSterile=="seleccione"){
 									console.log("filter5")
-									if(filterMicrochip==""||filterMicrochip=="seleccione"){
+									if (filterMicrochip == current.microchip||filterMicrochip=="seleccione"){
 										console.log("filter6")
 										td1.innerHTML= current.ownerName;
 										td2.innerHTML= current.petName;
@@ -161,8 +161,8 @@
 										td8.innerHTML= current.dangerous;
 										td9.innerHTML= current.neighborhood;
 										td10.innerHTML= current.creationDate;
-										td11.innerHTML= key;
-									}else if(filterMicrochip!=""||filterMicrochip=="seleccione"){
+										td11.innerHTML = key;
+									} else if (filterMicrochip != "" && current.microchip != "" || filterMicrochip == "seleccione") {
 										console.log("filter7")
 										td1.innerHTML= current.ownerName;
 										td2.innerHTML= current.petName;
