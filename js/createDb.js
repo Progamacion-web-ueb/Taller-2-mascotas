@@ -49,6 +49,9 @@
 				let td9 = document.createElement("td");
 				let td10 = document.createElement("td");
 				let td11 = document.createElement("td");
+				let td12 = document.createElement("td");
+				let td13 = document.createElement("td");
+				let td14 = document.createElement("td");
 			
 				let tr = document.createElement("tr");
 				document.getElementById("body-table").appendChild(tr);
@@ -66,6 +69,9 @@
 				tr.appendChild(td9);
 				tr.appendChild(td10);
 				tr.appendChild(td11);
+				tr.appendChild(td12);
+				tr.appendChild(td13);
+				tr.appendChild(td14);
 
 				td1.innerHTML= current.ownerName;
 				td2.innerHTML= current.petName;
@@ -78,6 +84,9 @@
 				td9.innerHTML= current.neighborhood;
 				td10.innerHTML= current.creationDate;
 				td11.innerHTML= key;
+				td12.innerHTML = current.modifyDate;
+				td13.innerHTML = current.modifyDateSterile;
+				td14.innerHTML = current.modifyDateMicroship;
 
 				// Pasamos a procesar el siguiente resultado
 				cursor.continue();
@@ -111,6 +120,9 @@
 				let td9 = document.createElement("td");
 				let td10 = document.createElement("td");
 				let td11 = document.createElement("td");
+				let td12 = document.createElement("td");
+				let td13 = document.createElement("td");
+				let td14 = document.createElement("td");
 				let tr = document.createElement("tr");
 				document.getElementById("body-table").appendChild(tr);
 				key=cursor.key;
@@ -126,8 +138,10 @@
 				tr.appendChild(td9);
 				tr.appendChild(td10);
 				tr.appendChild(td11);
+				tr.appendChild(td12);
+				tr.appendChild(td13);
+				tr.appendChild(td14);
 
-				
 				var filterSize=document.querySelector("#sizeOption").value;
 				var filterDangerous=document.querySelector("#dangerousOption").value;
 				var filterspices=document.querySelector("#speciesOption").value;
@@ -162,6 +176,9 @@
 										td9.innerHTML= current.neighborhood;
 										td10.innerHTML= current.creationDate;
 										td11.innerHTML = key;
+										td12.innerHTML = current.modifyDate;
+										td13.innerHTML = current.modifyDateSterile;
+										td14.innerHTML = current.modifyDateMicroship;
 									} else if (filterMicrochip != "" && current.microchip != "" || filterMicrochip == "seleccione") {
 										console.log("filter7")
 										td1.innerHTML= current.ownerName;
@@ -175,6 +192,9 @@
 										td9.innerHTML= current.neighborhood;
 										td10.innerHTML= current.creationDate;
 										td11.innerHTML= key;
+										td12.innerHTML = current.modifyDate;
+										td13.innerHTML = current.modifyDateSterile;
+										td14.innerHTML = current.modifyDateMicroship;
 									}
 								}
 								

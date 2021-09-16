@@ -207,7 +207,7 @@ function upData(){
         optionLocalidad20.innerHTML="Usme";
 
               //campo para modificar esterilidad
-        if(pet.sterile=="NO"){
+        if(pet.sterile=="No"){
             var titleSterile= document.createElement("label");
             var optionSterile1= document.createElement("option");
             var optionSterile2= document.createElement("option");
@@ -223,7 +223,6 @@ function upData(){
             valueSterile.appendChild(optionSterile2);
             optionSterile1.innerHTML="Si";
             optionSterile2.innerHTML="No";
-            modifyDateSterile= fechaHoraNav;
         }else{
             var titleSterile= document.createElement("label");
             var valueSterile= document.createElement("output");
@@ -233,7 +232,7 @@ function upData(){
             document.getElementById("Formadd").appendChild(valueSterile);
             titleSterile.innerHTML="* Esterilizacion(Solo modificable en caso de no estar esterilizado):";
             valueSterile.innerHTML=pet.sterile;
-            modifyDateSterile="N/A";
+
         }
 
              
@@ -246,7 +245,7 @@ function upData(){
             valueMicrochip.id="valueMicrochip1"
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
-            modifyDateMicroship=fechaHoraNav;
+
 
         titleMicrochip.innerHTML="* MicroChip(Campo modificable):";
         }else{
@@ -258,7 +257,6 @@ function upData(){
             document.getElementById("Formadd").appendChild(valueMicrochip);
             titleMicrochip.innerHTML="* MicroChip(Solo modificable en caso de no tener):";
             valueMicrochip.innerHTML=pet.microchip;
-            modifyDateMicroship="N/A";
         }
         FechaRegistro=pet.creationDate;
         NombrePropi=pet.ownerName;
@@ -268,6 +266,7 @@ function upData(){
         modifyDate=fechaHoraNav;
         console.log(fechaHoraNav);
     }
+  
 
 }
 function modifyPet(){
@@ -277,6 +276,17 @@ function modifyPet(){
     Localidad=document.querySelector('#valueLocalidad1').value;
     Esterilizacion=document.querySelector('#valueSterile1').value;
     Mircochip=document.querySelector('#valueMicrochip1').value;
+    if(Mircochip==""){
+        modifyDateMicroship="N/A";
+    }else{
+        modifyDateMicroship=fechaHoraNav;
+    }
+
+    if(Esterilizacion!="Si"){
+        modifyDateSterile="N/A";
+    }else{
+        modifyDateSterile=fechaHoraNav;
+    }
 
     console.log(FechaRegistro);
     console.log(NombrePropi);
