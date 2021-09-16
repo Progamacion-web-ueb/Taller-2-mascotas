@@ -10,6 +10,13 @@ var Localidad;
 var Esterilizacion;
 var Mircochip;
 var key;
+var modifyDate ;
+var modifyDateSterile ;
+var modifyDateMicroship ;
+var hoy= new Date();
+var fecha= hoy.getDate()+"-"+(hoy.getMonth()+1)+"-"+hoy.getUTCFullYear();
+var hora= hoy.getHours()+":"+hoy.getMinutes()+":"+hoy.getSeconds();
+var fechaHoraNav =fecha+" "+hora
 
 console.log("create data base");
 var openRequest = indexedDB.open("pets",1);
@@ -39,7 +46,6 @@ function upData(){
     var store = transaction.objectStore("people");
     store.get(key).onsuccess = function(event) {
         var pet = event.target.result;
-        console.log(pet.ownerName);
 
         var titleDate= document.createElement("label");
         var valueDate= document.createElement("output");
@@ -216,7 +222,8 @@ function upData(){
             valueSterile.appendChild(optionSterile1);
             valueSterile.appendChild(optionSterile2);
             optionSterile1.innerHTML="Si";
-            optionSterile2.innerHTML="No";   
+            optionSterile2.innerHTML="No";
+            modifyDateSterile= fechaHoraNav;
         }else{
             var titleSterile= document.createElement("label");
             var valueSterile= document.createElement("output");
@@ -226,6 +233,7 @@ function upData(){
             document.getElementById("Formadd").appendChild(valueSterile);
             titleSterile.innerHTML="* Esterilizacion(Solo modificable en caso de no estar esterilizado):";
             valueSterile.innerHTML=pet.sterile;
+            modifyDateSterile="N/A";
         }
 
              
@@ -238,6 +246,7 @@ function upData(){
             valueMicrochip.id="valueMicrochip1"
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
+            modifyDateMicroship=fechaHoraNav;
 
         titleMicrochip.innerHTML="* MicroChip(Campo modificable):";
         }else{
@@ -249,14 +258,16 @@ function upData(){
             document.getElementById("Formadd").appendChild(valueMicrochip);
             titleMicrochip.innerHTML="* MicroChip(Solo modificable en caso de no tener):";
             valueMicrochip.innerHTML=pet.microchip;
+            modifyDateMicroship="N/A";
         }
-        FechaRegistro=pet.created;
+        FechaRegistro=pet.creationDate;
         NombrePropi=pet.ownerName;
         NombreMascota=pet.petName;
         Especie=pet.species;
         Sexo=pet.sex;
+        modifyDate=fechaHoraNav;
+        console.log(fechaHoraNav);
     }
-
 
 }
 function modifyPet(){
@@ -285,7 +296,6 @@ function modifyPet(){
 
         //Define a person
         var person = {
-            created:new Date(),
             ownerName:NombrePropi,
             creationDate:FechaRegistro, 
             petName:NombreMascota, 
@@ -295,7 +305,10 @@ function modifyPet(){
             size:Tamaño, 
             dangerous:Peligrosidad, 
             sterile:Esterilizacion, 
-            neighborhood:Localidad
+            neighborhood:Localidad,
+            modifyDate:modifyDate ,
+            modifyDateSterile:modifyDateSterile, 
+            modifyDateMicroship:modifyDateMicroship
         }
         var request = store.add(person);
     

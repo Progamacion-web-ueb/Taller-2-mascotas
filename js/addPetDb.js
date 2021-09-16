@@ -34,6 +34,10 @@
         var dangerous = document.querySelector("#dangerous").value;
         var sterile = document.querySelector("#sterile").value;
         var neighborhood = document.querySelector("#neighborhood").value;
+        var modifyDate = "N/A";
+        var modifyDateSterile = "N/A";
+        var modifyDateMicroship = "N/A";
+    
     
         console.log("About to add "+ownerName+"/");
     
@@ -43,32 +47,39 @@
         //Ask for the objectStore
         var store = transaction.objectStore("people");
     
+        if(ownerName!=""&creationDate!=""&petName!=""&species!=""&sex!=""&size!=""&dangerous!=""&sterile!=""&neighborhood!=""){
+            var person = {
+                ownerName:ownerName,
+                creationDate:creationDate, 
+                petName:petName, 
+                microchip:microchip,
+                species:species,
+                sex:sex,
+                size:size, 
+                dangerous:dangerous, 
+                sterile:sterile, 
+                neighborhood: neighborhood,
+                modifyDate:modifyDate ,
+                modifyDateSterile:modifyDateSterile, 
+                modifyDateMicroship:modifyDateMicroship
+    
+            }
+        
+            //Perform the add
+            var request = store.add(person);
+        
+            request.onerror = function(e) {
+                console.log("Error",e.target.error.name);
+                //some type of error handler
+            }
+        
+            request.onsuccess = function(e) {
+                console.log("Woot! Did it");
+            }
+        }else{
+            alert("Todos los campos exepto microchip son obligatorios.La mascota no fue creada por favor intentelo nuevamente");
+        }
         //Define a person
-        var person = {
-            created:new Date(),
-            ownerName:ownerName,
-            creationDate:creationDate, 
-            petName:petName, 
-            microchip:microchip,
-            species:species,
-            sex:sex,
-            size:size, 
-            dangerous:dangerous, 
-            sterile:sterile, 
-            neighborhood: neighborhood
 
-        }
-    
-        //Perform the add
-        var request = store.add(person);
-    
-        request.onerror = function(e) {
-            console.log("Error",e.target.error.name);
-            //some type of error handler
-        }
-    
-        request.onsuccess = function(e) {
-            console.log("Woot! Did it");
-        }
     }
     
