@@ -1,2 +1,10 @@
 # Taller-2-mascotas
-Desarrollo básico aplicación web  “Ciudadanos de 4 Patas”
+Integrantes
+Luis Esteban Castro Niño
+Miguel Angel Ruiz Roa
+
+EL funcionamiento del programa esta con los requerimientos 
+completos exeptuando agregar las imagenes de los animales
+
+Link video de la explicacion
+
