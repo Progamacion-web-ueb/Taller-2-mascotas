@@ -221,6 +221,7 @@ function upData(){
             var titleSterile= document.createElement("label");
             var valueSterile= document.createElement("output");
             valueSterile.className="form-control";
+            valueSterile.id="valueSterile1";
             document.getElementById("Formadd").appendChild(titleSterile);
             document.getElementById("Formadd").appendChild(valueSterile);
             titleSterile.innerHTML="* Esterilizacion(Solo modificable en caso de no estar esterilizado):";
@@ -243,6 +244,7 @@ function upData(){
             var titleMicrochip= document.createElement("label");
             var valueMicrochip= document.createElement("output");
             valueMicrochip.className="form-control";
+            valueMicrochip.id="valueMicrochip1"
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
             titleMicrochip.innerHTML="* MicroChip(Solo modificable en caso de no tener):";
@@ -303,6 +305,7 @@ function modifyPet(){
         }
     
         request.onsuccess = function(e) {
+            alert("Moscota modificada correctamente");
             console.log("Agregada exitosamente");
             deletePerson();
         }
