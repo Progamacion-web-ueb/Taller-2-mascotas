@@ -13,6 +13,7 @@ var key;
 var modifyDate ;
 var modifyDateSterile ;
 var modifyDateMicroship ;
+var aux=0;
 var hoy= new Date();
 var fecha= hoy.getDate()+"-"+(hoy.getMonth()+1)+"-"+hoy.getUTCFullYear();
 var hora= hoy.getHours()+":"+hoy.getMinutes()+":"+hoy.getSeconds();
@@ -55,7 +56,7 @@ function upData(){
         document.getElementById("Formadd").appendChild(valueDate);
 
         titleDate.innerHTML="Fecha de registro:";
-        valueDate.innerHTML=pet.created;
+        valueDate.innerHTML=pet.creationDate;
 
         var titleOwnerPet= document.createElement("label");
         var valueOwnerPet= document.createElement("output");
@@ -223,7 +224,7 @@ function upData(){
             valueSterile.appendChild(optionSterile2);
             optionSterile1.innerHTML="Si";
             optionSterile2.innerHTML="No";
-        }else{
+        }else {
             var titleSterile= document.createElement("label");
             var valueSterile= document.createElement("output");
             valueSterile.className="form-control";
@@ -245,6 +246,7 @@ function upData(){
             valueMicrochip.id="valueMicrochip1"
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
+            aux=1
 
 
         titleMicrochip.innerHTML="* MicroChip(Campo modificable):";
@@ -276,10 +278,11 @@ function modifyPet(){
     Localidad=document.querySelector('#valueLocalidad1').value;
     Esterilizacion=document.querySelector('#valueSterile1').value;
     Mircochip=document.querySelector('#valueMicrochip1').value;
-    if(Mircochip==""){
-        modifyDateMicroship="N/A";
-    }else{
+    if(Mircochip!=""&aux==1){
         modifyDateMicroship=fechaHoraNav;
+    }else{
+        
+        modifyDateMicroship="N/A";
     }
 
     if(Esterilizacion!="Si"){

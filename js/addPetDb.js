@@ -62,7 +62,6 @@
                 modifyDate:modifyDate ,
                 modifyDateSterile:modifyDateSterile, 
                 modifyDateMicroship:modifyDateMicroship
-    
             }
         
             //Perform the add
