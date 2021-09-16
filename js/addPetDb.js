@@ -55,7 +55,8 @@
             size:size, 
             dangerous:dangerous, 
             sterile:sterile, 
-            neighborhood:neighborhood
+            neighborhood: neighborhood
+
         }
     
         //Perform the add
