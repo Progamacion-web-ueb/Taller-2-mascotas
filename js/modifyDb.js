@@ -1,4 +1,16 @@
 
+var FechaRegistro;
+var NombrePropi
+var NombreMascota;
+var Especie;
+var Sexo;
+var Tamaño;
+var Peligrosidad;
+var Localidad;
+var Esterilizacion;
+var Mircochip;
+var key;
+
 console.log("create data base");
 var openRequest = indexedDB.open("pets",1);
 openRequest.onupgradeneeded = function(e) {
@@ -10,16 +22,17 @@ openRequest.onupgradeneeded = function(e) {
 openRequest.onsuccess = function(e) {
     db = e.target.result;
     //Listen for add clicks
-    document.querySelector("#addKey").addEventListener("click", modifiPet);
+    document.querySelector("#addKey").addEventListener("click", upData);
+    document.querySelector("#botonActualizar").addEventListener("click", modifyPet);
 }    
 openRequest.onerror = function(e) {
     alert("openRequest.onerror");
     //Do something for the error
 }
 
-function modifiPet(){
+function upData(){
 
-    var key=document.querySelector("#keyUser").value;
+    key=document.querySelector("#keyUser").value;
     key = Number.parseInt(key);
     console.log(key);
     var transaction = db.transaction(["people"],"readonly");
@@ -31,6 +44,7 @@ function modifiPet(){
         var titleDate= document.createElement("label");
         var valueDate= document.createElement("output");
         valueDate.className="form-control";
+
         document.getElementById("Formadd").appendChild(titleDate);
         document.getElementById("Formadd").appendChild(valueDate);
 
@@ -78,17 +92,21 @@ function modifiPet(){
         var titleSize= document.createElement("label");
         var optionSize1= document.createElement("option");
         var optionSize2= document.createElement("option");
+        var optionSize3= document.createElement("option");
         var valueSize= document.createElement("select");
         
         valueSize.className="form-control";
+        valueSize.id="valueSize1";
         document.getElementById("Formadd").appendChild(titleSize);
         document.getElementById("Formadd").appendChild(valueSize);
 
-        titleSize.innerHTML=" * Tamaño:";
+        titleSize.innerHTML=" * Tamaño(Campo modificable):";
         valueSize.appendChild(optionSize1);
         valueSize.appendChild(optionSize2);
-        optionSize1.innerHTML="SI";
-        optionSize2.innerHTML="NO";
+        valueSize.appendChild(optionSize3);
+        optionSize1.innerHTML="Pequeño";
+        optionSize2.innerHTML="Mediano";
+        optionSize3.innerHTML="Grande";
 
         //campo para modificar peligrosidad
 
@@ -98,10 +116,11 @@ function modifiPet(){
         var valueDangerous= document.createElement("select");
         
         valueDangerous.className="form-control";
+        valueDangerous.id="valueDangerous1"
         document.getElementById("Formadd").appendChild(titleDangerous);
         document.getElementById("Formadd").appendChild(valueDangerous);
 
-        titleDangerous.innerHTML=" * Peligrosidad:";
+        titleDangerous.innerHTML=" * Peligrosidad(Campo modificable):";
         valueDangerous.appendChild(optionDangerous1);
         valueDangerous.appendChild(optionDangerous2);
         optionDangerous1.innerHTML="Amenaza";
@@ -134,10 +153,11 @@ function modifiPet(){
         var valueLocalidad= document.createElement("select");
         
         valueLocalidad.className="form-control";
+        valueLocalidad.id="valueLocalidad1"
         document.getElementById("Formadd").appendChild(titleLocalidad);
         document.getElementById("Formadd").appendChild(valueLocalidad);
 
-        titleLocalidad.innerHTML=" * Localidad:";
+        titleLocalidad.innerHTML=" * Localidad(Campo modificable):";
         valueLocalidad.appendChild(optionLocalidad1);
         valueLocalidad.appendChild(optionLocalidad2);
         valueLocalidad.appendChild(optionLocalidad3);
@@ -180,23 +200,6 @@ function modifiPet(){
         optionLocalidad19.innerHTML="Usaquén";
         optionLocalidad20.innerHTML="Usme";
 
-                //campo para modificar peligrosidad
-
-        var titleDangerous= document.createElement("label");
-        var optionDangerous1= document.createElement("option");
-        var optionDangerous2= document.createElement("option");
-        var valueDangerous= document.createElement("select");
-        
-        valueDangerous.className="form-control";
-        document.getElementById("Formadd").appendChild(titleDangerous);
-        document.getElementById("Formadd").appendChild(valueDangerous);
-
-        titleDangerous.innerHTML=" * Peligrosidad:";
-        valueDangerous.appendChild(optionDangerous1);
-        valueDangerous.appendChild(optionDangerous2);
-        optionDangerous1.innerHTML="Amenaza";
-        optionDangerous2.innerHTML="No Amenaza";
-
               //campo para modificar esterilidad
         if(pet.sterile=="NO"){
             var titleSterile= document.createElement("label");
@@ -205,10 +208,11 @@ function modifiPet(){
             var valueSterile= document.createElement("select");
             
             valueSterile.className="form-control";
+            valueSterile.id="valueSterile1";
             document.getElementById("Formadd").appendChild(titleSterile);
             document.getElementById("Formadd").appendChild(valueSterile);
     
-            titleSterile.innerHTML=" * Esterilizacion:";
+            titleSterile.innerHTML=" * Esterilizacion(Campo modificable):";
             valueSterile.appendChild(optionSterile1);
             valueSterile.appendChild(optionSterile2);
             optionSterile1.innerHTML="Si";
@@ -219,7 +223,7 @@ function modifiPet(){
             valueSterile.className="form-control";
             document.getElementById("Formadd").appendChild(titleSterile);
             document.getElementById("Formadd").appendChild(valueSterile);
-            titleSterile.innerHTML="* Esterilizacion:";
+            titleSterile.innerHTML="* Esterilizacion(Solo modificable en caso de no estar esterilizado):";
             valueSterile.innerHTML=pet.sterile;
         }
 
@@ -230,22 +234,89 @@ function modifiPet(){
             var titleMicrochip= document.createElement("label");
             var valueMicrochip= document.createElement("input");
             valueMicrochip.className="form-control";
+            valueMicrochip.id="valueMicrochip1"
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
 
-        titleMicrochip.innerHTML="* MicroChip:";
+        titleMicrochip.innerHTML="* MicroChip(Campo modificable):";
         }else{
             var titleMicrochip= document.createElement("label");
             var valueMicrochip= document.createElement("output");
             valueMicrochip.className="form-control";
             document.getElementById("Formadd").appendChild(titleMicrochip);
             document.getElementById("Formadd").appendChild(valueMicrochip);
-            titleMicrochip.innerHTML="* MicroChip:";
+            titleMicrochip.innerHTML="* MicroChip(Solo modificable en caso de no tener):";
             valueMicrochip.innerHTML=pet.microchip;
         }
-        
-        
+        FechaRegistro=pet.created;
+        NombrePropi=pet.ownerName;
+        NombreMascota=pet.petName;
+        Especie=pet.species;
+        Sexo=pet.sex;
     }
+
+
+}
+function modifyPet(){
+
+    Tamaño=document.querySelector('#valueSize1').value;
+    Peligrosidad=document.querySelector('#valueDangerous1').value;
+    Localidad=document.querySelector('#valueLocalidad1').value;
+    Esterilizacion=document.querySelector('#valueSterile1').value;
+    Mircochip=document.querySelector('#valueMicrochip1').value;
+
+    console.log(FechaRegistro);
+    console.log(NombrePropi);
+    console.log(NombreMascota);
+    console.log(Especie);
+    console.log(Sexo);
+    console.log(Tamaño);
+    console.log(Peligrosidad);
+    console.log(Localidad);
+    console.log(Esterilizacion);
+    console.log(Mircochip);
+
+    var transaction = db.transaction(["people"],"readwrite");
+        //Ask for the objectStore
+        var store = transaction.objectStore("people");
+
+
+        //Define a person
+        var person = {
+            created:new Date(),
+            ownerName:NombrePropi,
+            creationDate:FechaRegistro, 
+            petName:NombreMascota, 
+            microchip:Mircochip,
+            species:Especie,
+            sex:Sexo,
+            size:Tamaño, 
+            dangerous:Peligrosidad, 
+            sterile:Esterilizacion, 
+            neighborhood:Localidad
+        }
+        var request = store.add(person);
+    
+        request.onerror = function(e) {
+            console.log("Error",e.target.error.name);
+            //some type of error handler
+        }
+    
+        request.onsuccess = function(e) {
+            console.log("Agregada exitosamente");
+            deletePerson();
+        }
+}
+
+function deletePerson() {
+	//Get a transaction
+	//default for OS list is all, default for type is read
+	var transaction = db.transaction(["people"],"readwrite");
+	//Ask for the objectStore
+	var store = transaction.objectStore("people");
+	//Perform the delete
+    console.log(key)
+	var request = store.delete(key);
 }
 
 
