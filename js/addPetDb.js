@@ -73,6 +73,7 @@
             }
         
             request.onsuccess = function(e) {
+                alert("Mascota agregada correctamente");
                 console.log("Woot! Did it");
             }
         }else{
